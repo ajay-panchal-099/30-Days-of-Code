@@ -21,6 +21,19 @@ int main()
         int n = stoi(nk[0]);
 
         int k = stoi(nk[1]);
+
+
+        int res = INT_MIN;
+
+        for(int i = 1; i<=n; i++){ 
+            for(int j=i+1; j<=n ; j++){ 
+                int x = i&j;
+                if(x<k)
+                   res = max(res,x);
+            }
+        }
+
+        cout<<res<<endl;
     }
 
     return 0;
@@ -54,4 +67,3 @@ vector<string> split_string(string input_string) {
 
     return splits;
 }
-
